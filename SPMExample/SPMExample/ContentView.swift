@@ -12,12 +12,24 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            Button("Touch this") {
-                requestNetwork()
+            HStack {
+                Button("Open Log View") {
+
+                }
+                .padding()
+                .background(Color.blue)
+                .clipShape(Capsule())
+
+                Button("Request API") {
+                    requestNetwork()
+                }
+                .padding()
+                .background(Color.green)
+                .clipShape(Capsule())
             }
-            TextField("Title", text: $pokemonName)
+            .padding()
+            TextField("Title", text: $pokemonName).multilineTextAlignment(.center)
         }
-        .padding()
     }
 
     func requestNetwork() {
