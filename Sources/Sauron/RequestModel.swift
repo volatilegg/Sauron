@@ -60,7 +60,7 @@ open class RequestModel: Codable, Equatable {
 /// Logging extensions
 public extension RequestModel {
     var requestString: String {
-        var s = "[Request ⬆️]: \(method) '\(url)'"
+        var s = "[Request]: \(method) '\(url)'"
 
         s += "\n" + logHeaders(headers)
 
@@ -70,7 +70,7 @@ public extension RequestModel {
     }
 
     var responseString: String {
-        var s = "[Response ⬇️]: \(method) '\(url)'"
+        var s = "[Response]: \(method) '\(url)'"
 
         s += code.statusLog
 
@@ -86,7 +86,7 @@ public extension RequestModel {
     }
 
     var errorString: String {
-        var s = "[Response Error ⚠️]: \(method) '\(url)'"
+        var s = "[Response Error]: \(method) '\(url)'"
 
         if let error = errorClientDescription {
             s += "ERROR: \(error)"
