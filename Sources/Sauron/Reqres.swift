@@ -49,13 +49,18 @@ open class Reqres: URLProtocol, URLSessionDelegate {
         URLProtocol.unregisterClass(self)
     }
 
-    open class func defaultSessionConfiguration(additionalHeaders: [String: Any]) -> URLSessionConfiguration {
+    open class func defaultSessionConfiguration(
+        additionalHeaders: [String: Any],
+        timeoutIntervalForRequest: TimeInterval = 40,
+        timeoutIntervalForResource: TimeInterval = 40,
+        requestCachePolicy: NSURLRequest.CachePolicy = .useProtocolCachePolicy
+    ) -> URLSessionConfiguration {
         let config = URLSessionConfiguration.default
         config.protocolClasses?.insert(Reqres.self, at: 0)
         config.httpAdditionalHeaders = additionalHeaders
-        config.timeoutIntervalForRequest = 40
-        config.timeoutIntervalForResource = 40
-        config.requestCachePolicy = .useProtocolCachePolicy
+        config.timeoutIntervalForRequest = timeoutIntervalForRequest
+        config.timeoutIntervalForResource = timeoutIntervalForResource
+        config.requestCachePolicy = requestCachePolicy
         return config
     }
 

@@ -8,17 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        requestNetwork()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    private func requestNetwork() {
+        NetworkManager.shared.fetchPokemon(id: 33) { result in
+            switch result {
+                case let .success(pokemon):
+                    print(pokemon.name)
+                case let .failure(error):
+                    print(error.description)
+            }
+        }
     }
-
 }
-
