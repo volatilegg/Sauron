@@ -1,0 +1,12 @@
+use_frameworks!
+
+platform :ios, '14.0'
+
+target 'Sauron_Example' do
+  pod 'Sauron', :path => '../'
+
+  target 'Sauron_Tests' do
+    inherit! :search_paths
+    
+  end
+end
