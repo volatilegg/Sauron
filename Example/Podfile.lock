@@ -1,0 +1,16 @@
+PODS:
+  - Sauron (0.1.0)
+
+DEPENDENCIES:
+  - Sauron (from `../`)
+
+EXTERNAL SOURCES:
+  Sauron:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Sauron: eab4a584e5fcc24db234f4fe3f26c1b1d991c9dc
+
+PODFILE CHECKSUM: 6b57146f533108d1b47a1343270dadce871a2cfc
+
+COCOAPODS: 1.12.0
