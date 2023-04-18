@@ -11,24 +11,27 @@ struct ContentView: View {
     @State private var pokemonName: String = "Nothing yet"
 
     var body: some View {
-        VStack {
-            HStack {
-                Button("Open Log View") {
+        NavigationView {
+            VStack {
+                HStack {
 
+                    NavigationLink(destination: Text("Aloo")) {
+                        Text("Do Something")
+                    }
+                    .padding()
+                    .background(Color.red)
+                    .clipShape(Capsule())
+
+                    Button("Request API") {
+                        requestNetwork()
+                    }
+                    .padding()
+                    .background(Color.green)
+                    .clipShape(Capsule())
                 }
                 .padding()
-                .background(Color.blue)
-                .clipShape(Capsule())
-
-                Button("Request API") {
-                    requestNetwork()
-                }
-                .padding()
-                .background(Color.green)
-                .clipShape(Capsule())
+                TextField("Title", text: $pokemonName).multilineTextAlignment(.center)
             }
-            .padding()
-            TextField("Title", text: $pokemonName).multilineTextAlignment(.center)
         }
     }
 
