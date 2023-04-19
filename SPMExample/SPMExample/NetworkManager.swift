@@ -46,8 +46,7 @@ final class NetworkManager {
     }
 
     func fetchPokemon(id: Int, completionHandler: @escaping (Result<Pokemon, NetworkError>) -> Void) {
-        let url = URL(string: "https://pokeapi.co/api/v2/pokemon/\(id)")!
-
+        let url = baseUrl.appendingPathComponent("id")
         let task = defaultSession.dataTask(
             with: url,
             completionHandler: { (data, response, error) in
