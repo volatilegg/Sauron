@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Sauron
 
 struct ContentView: View {
     @State private var pokemonName: String = "Nothing yet"
@@ -14,9 +15,8 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 HStack {
-
-                    NavigationLink(destination: Text("Aloo")) {
-                        Text("Do Something")
+                    NavigationLink(destination: RequestListView()) {
+                        Text("Open Log")
                     }
                     .padding()
                     .background(Color.red)
@@ -36,12 +36,12 @@ struct ContentView: View {
     }
 
     func requestNetwork() {
-        NetworkManager.shared.fetchPokemon(id: 33) { result in
+        NetworkManager.shared.fetchPokemon(id: Int.random(in: 1...256)) { result in
             switch result {
                 case let .success(pokemon):
                     pokemonName = pokemon.name
                 case let .failure(error):
-                    print(error.description)
+                    pokemonName = error.description
             }
         }
     }

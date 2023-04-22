@@ -1,11 +1,9 @@
 //
 //  Atomic.swift
-//  WhimUtils
+//  Sauron
 //
 //  Created by Dima Osadchy on 21.10.2019.
 //
-
-// Copy from WhimUtils.Atomic
 
 import Foundation
 

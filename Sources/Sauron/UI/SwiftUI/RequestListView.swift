@@ -1,5 +1,5 @@
 //
-//  SwiftUIView.swift
+//  RequestListView.swift
 //  
 //
 //  Created by Duc Do on 18.4.2023.
@@ -7,20 +7,20 @@
 
 import SwiftUI
 
-struct RequestListView: View {
-    var body: some View {
+public struct RequestListView: View {
+    @ObservedObject var model = Sauron.shared
+
+    public init() {
+
+    }
+
+    public var body: some View {
         NavigationView {
-            TabView {
-                TestView()
-                    .tabItem {
-                        Image(systemName: "person.3")
-                    }
-                TestView()
-                    .tabItem {
-                        Image(systemName: "person.2")
-                    }
+            List {
+                ForEach(model.publishedRequests) { request in
+                    Text(request.url)
+                }
             }
-            .navigationTitle("Test")
         }
         .navigationViewStyle(.stack)
     }

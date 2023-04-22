@@ -43,10 +43,12 @@ final class NetworkManager {
     ) {
         self.baseUrl = baseUrl
         self.defaultSession = defaultSession
+
+        Sauron.shared.logMode = .enable
     }
 
     func fetchPokemon(id: Int, completionHandler: @escaping (Result<Pokemon, NetworkError>) -> Void) {
-        let url = baseUrl.appendingPathComponent("id")
+        let url = baseUrl.appendingPathComponent("\(id)")
         let task = defaultSession.dataTask(
             with: url,
             completionHandler: { (data, response, error) in
