@@ -1,6 +1,6 @@
 //
 //  RequestModel.swift
-//  WhimNetwork
+//  Sauron
 //
 //  Created by Do Duc on 28/02/2019.
 //
@@ -9,7 +9,7 @@
 
 import Foundation
 
-open class RequestModel: Codable, Equatable {
+open class RequestModel: Codable, Equatable, Identifiable {
     public typealias Id = String
 
     public let id: Id
@@ -23,6 +23,32 @@ open class RequestModel: Codable, Equatable {
     open var dataResponse: Data?
     open var errorClientDescription: String?
     open var duration: Double?
+
+    init(
+        id: Id,
+        url: String,
+        date: Date,
+        method: String,
+        headers: [String: String]?,
+        httpBody: Data?,
+        code: Int,
+        responseHeaders: [String: String]?,
+        dataResponse: Data?,
+        errorClientDescription: String?,
+        duration: Double?
+    ) {
+        self.id = id
+        self.url = url
+        self.date = date
+        self.method = method
+        self.headers = headers
+        self.httpBody = httpBody
+        self.code = code
+        self.responseHeaders = responseHeaders
+        self.dataResponse = dataResponse
+        self.errorClientDescription = errorClientDescription
+        self.duration = duration
+    }
 
     init(request: URLRequest) {
         id = UUID().uuidString

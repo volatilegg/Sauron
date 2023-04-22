@@ -1,22 +1,24 @@
 import Foundation
 
-public class Sauron {
+public class Sauron: ObservableObject {
     public static let shared = Sauron()
-    public static let newRequestNotification = Notification.Name("WhimNewRequestUpdate")
+    public static let newRequestNotification = Notification.Name("NewRequestUpdate")
 
-    var logMode: NetworkLogMode = .disable {
+    public var logMode: NetworkLogMode = .disable {
         didSet {
             resetData()
         }
     }
 
-    private let requests: Atomic<[RequestModel.Id: RequestModel]> = .init([:])
+    private var requests: Atomic<[RequestModel.Id: RequestModel]> = .init([:])
 
-    public var requestModels: [RequestModel] {
-        return Array(requests.value.values)
-    }
+    @Published var publishedRequests: [RequestViewModel] = []
 
     public func insertRequest(_ request: RequestModel?) {
+        defer {
+            publishedRequests = Array(requests.value.values.map({ RequestViewModel(requestModel: $0)}))
+        }
+
         // Safety first 👷‍♀️
         if logMode == .disable {
             resetData()
@@ -38,6 +40,10 @@ public class Sauron {
     }
 
     public func resetData() {
+        defer {
+            publishedRequests = Array(requests.value.values.map({ RequestViewModel(requestModel: $0)}))
+        }
+
         requests.mutate {
             $0.removeAll()
         }
