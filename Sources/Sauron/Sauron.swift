@@ -4,19 +4,31 @@ public class Sauron: ObservableObject {
     public static let shared = Sauron()
     public static let newRequestNotification = Notification.Name("NewRequestUpdate")
 
+    public var dateFormatter: DateFormatter
+
     public var logMode: NetworkLogMode = .disable {
         didSet {
             resetData()
         }
     }
 
+    public init() {
+        self.dateFormatter = DateFormatter()
+        self.dateFormatter.dateStyle = .short
+        self.dateFormatter.timeStyle = .full
+    }
+
     private var requests: Atomic<[RequestModel.Id: RequestModel]> = .init([:])
 
+    public var requestModels: [RequestModel] {
+        return Array(requests.value.values)
+    }
+    
     @Published var publishedRequests: [RequestViewModel] = []
 
     public func insertRequest(_ request: RequestModel?) {
         defer {
-            publishedRequests = Array(requests.value.values.map({ RequestViewModel(requestModel: $0)}))
+            updateRequests()
         }
 
         // Safety first 👷‍♀️
@@ -41,12 +53,16 @@ public class Sauron: ObservableObject {
 
     public func resetData() {
         defer {
-            publishedRequests = Array(requests.value.values.map({ RequestViewModel(requestModel: $0)}))
+            updateRequests()
         }
 
         requests.mutate {
             $0.removeAll()
         }
+    }
+
+    private func updateRequests() {
+        publishedRequests = Array(requests.value.values.map({ RequestViewModel(requestModel: $0)}))
     }
 }
 

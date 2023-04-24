@@ -58,7 +58,7 @@ struct ResponseCode {
         }
     }
 
-    enum `Type`: String {
+    enum `Type`: String, CaseIterable {
         case informational
         case success
         case redirection
