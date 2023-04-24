@@ -10,16 +10,20 @@ import SwiftUI
 public struct RequestListView: View {
     @ObservedObject var model = Sauron.shared
 
+
     public init() {
 
     }
 
     public var body: some View {
         NavigationView {
-            List {
-                ForEach(model.publishedRequests) { request in
-                    Text(request.url)
+            VStack {
+                List {
+                    ForEach(model.publishedRequests) { request in
+                        Text(request.url)
+                    }
                 }
+                
             }
         }
         .navigationViewStyle(.stack)
