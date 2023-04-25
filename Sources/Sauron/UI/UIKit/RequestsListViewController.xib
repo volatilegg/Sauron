@@ -38,7 +38,7 @@
                             </constraints>
                             <state key="normal" image="arrow.left" catalog="system"/>
                             <connections>
-                                <action selector="backButtonTapped:" destination="-1" eventType="touchUpOutside" id="hq4-Gu-F1m"/>
+                                <action selector="backButtonTapped:" destination="-1" eventType="touchUpInside" id="ucZ-nS-kQL"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HD9-LU-UH3">
@@ -51,7 +51,7 @@
                                 <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="nukeButtonTapped:" destination="-1" eventType="touchUpOutside" id="ajH-li-YnK"/>
+                                <action selector="nukeButtonTapped:" destination="-1" eventType="touchUpInside" id="tOP-8b-pPq"/>
                             </connections>
                         </button>
                     </subviews>

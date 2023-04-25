@@ -36,6 +36,7 @@ final class RequestDetailsViewController: UIViewController {
         abort(animated: true)
     }
 
+
     @IBAction func shareButtonTapped(_ sender: Any) {
 
         // Due to slack only shares the first element of the array, the element in items array will be converted into one string
@@ -44,18 +45,18 @@ final class RequestDetailsViewController: UIViewController {
         let items = [requestString]
 
         let activityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
-
-        show(activityViewController, sender: nil)
+        present(activityViewController, animated: true)
+//        show(activityViewController, sender: nil)
     }
 
     @IBAction func requestSegmentValueChanged(_ sender: Any) {
         switch requestSegmentControl.selectedSegmentIndex {
-        case 0:
-            showRequest()
-        case 1:
-            showResponse()
-        default:
-            break
+            case 0:
+                showRequest()
+            case 1:
+                showResponse()
+            default:
+                break
         }
     }
 
