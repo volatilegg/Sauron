@@ -14,8 +14,8 @@ public class Sauron: ObservableObject {
 
     public init() {
         self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateStyle = .short
-        self.dateFormatter.timeStyle = .full
+        self.dateFormatter.dateStyle = .none
+        self.dateFormatter.timeStyle = .short
     }
 
     private var requests: Atomic<[RequestModel.Id: RequestModel]> = .init([:])

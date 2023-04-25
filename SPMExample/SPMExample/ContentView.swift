@@ -15,7 +15,7 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 HStack {
-                    NavigationLink(destination: RequestListView()) {
+                    NavigationLink(destination: RequestListPresentView()) {
                         Text("Open Log")
                     }
                     .padding()

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NetworkTableViewCell" rowHeight="94" id="KGk-i7-Jjw" customClass="NetworkTableViewCell" customModule="Sauron">
+            <rect key="frame" x="0.0" y="0.0" width="387" height="94"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="387" height="94"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDa-HK-Rhc">
+                        <rect key="frame" x="0.0" y="0.0" width="100" height="94"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="Iad-XF-d7c"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hoa-89-yXL">
+                        <rect key="frame" x="100" y="0.0" width="287" height="94"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="IDa-HK-Rhc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="0rJ-gX-Hc7"/>
+                    <constraint firstAttribute="trailing" secondItem="Hoa-89-yXL" secondAttribute="trailing" id="67h-nL-Meb"/>
+                    <constraint firstItem="Hoa-89-yXL" firstAttribute="leading" secondItem="IDa-HK-Rhc" secondAttribute="trailing" id="7O3-aP-ujj"/>
+                    <constraint firstAttribute="bottom" secondItem="IDa-HK-Rhc" secondAttribute="bottom" id="HgW-ew-1rA"/>
+                    <constraint firstItem="IDa-HK-Rhc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="MPN-4Y-Tup"/>
+                    <constraint firstAttribute="bottom" secondItem="Hoa-89-yXL" secondAttribute="bottom" id="RIF-HD-WS0"/>
+                    <constraint firstItem="Hoa-89-yXL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="STA-2I-Pkz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="requestContentLabel" destination="Hoa-89-yXL" id="6GZ-Px-lHr"/>
+                <outlet property="statusLabel" destination="IDa-HK-Rhc" id="F4r-Kh-adj"/>
+            </connections>
+            <point key="canvasLocation" x="-115.26717557251908" y="-20.422535211267608"/>
+        </tableViewCell>
+    </objects>
+</document>
