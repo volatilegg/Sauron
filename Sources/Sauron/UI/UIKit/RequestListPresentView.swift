@@ -13,7 +13,7 @@ public struct RequestListPresentView: UIViewControllerRepresentable {
     public init() { }
 
     public func makeUIViewController(context: Context) -> RequestsListViewController {
-        return RequestsListViewController(nibName: "RequestsListViewController", bundle: Bundle.module)
+        return RequestsListViewController.makeViewController()
     }
 
     public func updateUIViewController(_ uiViewController: RequestsListViewController, context: Context) {
