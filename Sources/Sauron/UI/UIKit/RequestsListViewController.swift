@@ -110,8 +110,8 @@ final public class RequestsListViewController: UIViewController {
 extension RequestsListViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let request = requests[indexPath.row]
-        let requestDetailsViewController = RequestDetailsViewController.makeFromStoryboard(request: request)
-
+        let requestDetailsViewController = RequestDetailsViewController(nibName: "RequestDetailsViewController", bundle: Bundle.module)
+        requestDetailsViewController.request = request
         show(requestDetailsViewController, sender: nil)
     }
 }
