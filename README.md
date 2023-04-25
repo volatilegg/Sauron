@@ -8,7 +8,11 @@ An iOS library to check and share network log easier, can be embedded into your 
 | --- | --- | --- | --- | --- |
 
 _Insprised by [Reqres](https://github.com/AckeeCZ/Reqres) and [Wormhole](https://github.com/nixzhu/Wormhole)_
-## Installation 
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/ducdo)
+
+
+## Installation
 
 ### Swift Package Manager
 
