@@ -61,7 +61,7 @@ final public class RequestsListViewController: UIViewController {
 
         configureSegmentedControl()
 
-        requestsTableView.register(UINib(nibName: "NetworkTableViewCell", bundle: Bundle.module), forCellReuseIdentifier: "NetworkTableViewCell")
+        requestsTableView.register(UINib(nibName: "NetworkTableViewCell", bundle: Bundle.resources), forCellReuseIdentifier: "NetworkTableViewCell")
         reloadRequestsData()
 
         requestObserver = NotificationCenter.default.addObserver(forName: Sauron.newRequestNotification, object: nil, queue: nil, using: { _ in
@@ -89,7 +89,7 @@ final public class RequestsListViewController: UIViewController {
     }
 
     public static func makeViewController() -> RequestsListViewController {
-        return RequestsListViewController(nibName: "RequestsListViewController", bundle: Bundle.module)
+        return RequestsListViewController(nibName: "RequestsListViewController", bundle: Bundle.resources)
     }
 
     // MARK: - Private Methods
@@ -113,7 +113,7 @@ final public class RequestsListViewController: UIViewController {
 extension RequestsListViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let request = requests[indexPath.row]
-        let requestDetailsViewController = RequestDetailsViewController(nibName: "RequestDetailsViewController", bundle: Bundle.module)
+        let requestDetailsViewController = RequestDetailsViewController(nibName: "RequestDetailsViewController", bundle: Bundle.resources)
         requestDetailsViewController.request = request
         show(requestDetailsViewController, sender: nil)
     }
