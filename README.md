@@ -37,7 +37,7 @@ end
 
 ## Usage 
 
-### Network configuration 
+### 1. Network configuration 
 
 #### Default network config
 
@@ -61,7 +61,7 @@ urlSession.dataTask(
 )
 ```
 
-### Alamofire/Moya
+#### [Alamofire](https://github.com/Alamofire/Alamofire)/[Moya](https://github.com/Moya/Moya)
 Inject `Reqres.defaultSessionConfiguration` into `Alamofire.Session(configuration:{{configuration}})`
 
 ```swift
@@ -81,5 +81,44 @@ var provider = MoyaProvider<PokemonAPI>(
   session: sessionManager,
   plugins: []
 )
+
+provider.request(target) { result in
+  // handling response callback
+}
 ```
+
+### 2. Configure log mode
+_Note_ default mode is `disabled` and should be the mode to use in prodution 
+
+Using this snippet to control the mode 
+```swfit
+// Display all network information
+Sauron.shared.logMode = .enable
+
+// Remove all network information
+Sauron.shared.logMode = .disable
+
+// Display network information without request's headers
+Sauron.shared.logMode = .disableHeader
+```
+
+### 3. Configure log UI
+
+#### SwiftUI 
+
+Open this view `RequestListPresentView()` to see the whole log UI
+```swift 
+NavigationLink(destination: RequestListPresentView()) {
+  Text("Open Log")
+}
+```
+
+#### UIKit
+
+Open this view `RequestsListViewController` to see the whole log UI
+
+```swift
+viewController.show(RequestsListViewController.makeViewController())
+```
+
 
