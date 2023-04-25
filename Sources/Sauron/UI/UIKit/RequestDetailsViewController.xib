@@ -85,7 +85,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="200" translatesAutoresizingMaskIntoConstraints="NO" id="gyx-Tp-6cn">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="touchid" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="gyx-Tp-6cn">
                     <rect key="frame" x="0.0" y="718" width="393" height="100"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="lZe-Hk-OVV"/>
@@ -112,7 +112,7 @@
         </view>
     </objects>
     <resources>
-        <image name="200" width="750" height="600"/>
         <image name="arrow.left" catalog="system" width="128" height="95"/>
+        <image name="touchid" catalog="system" width="128" height="122"/>
     </resources>
 </document>

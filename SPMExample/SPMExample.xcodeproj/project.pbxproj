@@ -84,9 +84,9 @@
 		E8168CEB29EED8F4007D59D2 /* SPMExample */ = {
 			isa = PBXGroup;
 			children = (
-				E8168D2229EEDC6D007D59D2 /* Pokemon.swift */,
-				E8168D2029EEDC31007D59D2 /* NetworkManager.swift */,
-				E8168D1B29EEDBD3007D59D2 /* Codable+Extension.swift */,
+				E86BE33E29F7FEE50032118B /* Networks */,
+				E86BE33D29F7FE990032118B /* Utilities */,
+				E86BE33C29F7FE800032118B /* Models */,
 				E8168D1C29EEDBD3007D59D2 /* ContentView.swift */,
 				E8168CEC29EED8F4007D59D2 /* SPMExampleApp.swift */,
 				E8168CF029EED8F5007D59D2 /* Assets.xcassets */,
@@ -116,6 +116,30 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E86BE33C29F7FE800032118B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E8168D2229EEDC6D007D59D2 /* Pokemon.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E86BE33D29F7FE990032118B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E8168D1B29EEDBD3007D59D2 /* Codable+Extension.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E86BE33E29F7FEE50032118B /* Networks */ = {
+			isa = PBXGroup;
+			children = (
+				E8168D2029EEDC31007D59D2 /* NetworkManager.swift */,
+			);
+			path = Networks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
