@@ -7,7 +7,6 @@
 
 import UIKit
 
-
 public extension NSAttributedString {
     convenience init(
         fullText: String,
