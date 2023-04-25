@@ -88,6 +88,10 @@ final public class RequestsListViewController: UIViewController {
         filter.scope = Scope(index: sender.selectedSegmentIndex)
     }
 
+    public static func makeViewController() -> RequestsListViewController {
+        return RequestsListViewController(nibName: "RequestsListViewController", bundle: Bundle.module)
+    }
+
     // MARK: - Private Methods
     //
     private func configureSegmentedControl() {
