@@ -1,16 +1,14 @@
 //
-//  RequestTableViewCell.swift
-//  whim-ios
+//  NetworkTableViewCell.swift
+//  
 //
-//  Created by Do Duc on 04/03/2019.
-//  Copyright © 2019 maas. All rights reserved.
+//  Created by Duc Do on 25.4.2023.
 //
 
 import UIKit
 
-final class RequestTableViewCell: UITableViewCell {
+class NetworkTableViewCell: UITableViewCell {
 
-    @IBOutlet private weak var statusView: UIView!
     @IBOutlet private weak var statusLabel: UILabel!
     @IBOutlet private weak var requestContentLabel: UILabel!
 
@@ -24,7 +22,7 @@ final class RequestTableViewCell: UITableViewCell {
         var text = Sauron.shared.dateFormatter.string(from: request.date) + "\n"
 
         if request.code == 0 {
-            text += "⬆️ ..."            
+            text += "⬆️ ..."
         } else {
             text += "\(request.code.statusIcon) \(request.code)"
         }
