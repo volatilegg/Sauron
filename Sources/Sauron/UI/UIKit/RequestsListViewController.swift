@@ -1,9 +1,8 @@
 //
 //  RequestsListViewController.swift
-//  whim-ios
+//  Sauron
 //
 //  Created by Do Duc on 04/03/2019.
-//  Copyright © 2019 maas. All rights reserved.
 //
 
 import UIKit

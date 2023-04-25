@@ -3,7 +3,7 @@
 //  Sauron_Example
 //
 //  Created by Duc Do on 18.4.2023.
-//  Copyright © 2023 CocoaPods. All rights reserved.
+//  Copyright © 2023 volatilegg. All rights reserved.
 //
 
 import Foundation
